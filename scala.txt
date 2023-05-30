@@ -1,0 +1,33 @@
+import org.apache.spark.SparkContext
+
+val sc = new SparkContext()
+
+var map = sc.textFile(" ").flatMap(line => line.split(" ").map(word => (word,1));
+
+var counts = map.reduceBy("_ + _");
+counts.collect
+
+val key1 = counts.keys
+val sorted = key1.sortBy(x=>x,true)
+sorted.collect
+
+counts.saveAsTextFile("")
+sorted.saveAsTestFile("")
+
+
+
+
+commands :
+
+su root
+cd/
+cd mnt
+ls
+cd spark
+ls
+cd bin
+gedit new.txt 	/nano
+gedit new.scala
+
+./spark-shell
+load new.scala
